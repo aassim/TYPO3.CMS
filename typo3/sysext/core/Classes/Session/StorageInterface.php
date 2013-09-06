@@ -40,6 +40,7 @@ interface StorageInterface {
 	 *
 	 * @param string $identifier the session ID
 	 * @return Data session data object
+	 * @todo tk 2013-09-06 extend interface to optionally accept further key-value pairs which should be checked, like ses_iplock, ses_hashlock, ses_name
 	 */
 	public function get($identifier);
 

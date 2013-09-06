@@ -12,4 +12,21 @@ if (TYPO3_MODE === 'BE') {
 	);
 }
 
+// Add classic session storage service
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addService(
+	'core',
+	'sessionStorage',
+	'TYPO3\\CMS\\Core\\Session\\ClassicStorage',
+	array(
+		'title' => 'Session Storage: Classic',
+		'description' => 'Stores user sessions in TYPO3 database. ',
+		'subtype' => 'backend, frontend',
+		'available' => TRUE,
+		'priority' => 10,
+		'quality' => 50,
+		'os' => '',
+		'exec' => '',
+		'className' => 'TYPO3\\CMS\\Core\\Session\\ClassicStorage'
+	)
+);
 ?>
